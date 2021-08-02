@@ -1,0 +1,21 @@
+{
+  "title": "Bike Polo Calendar",
+  "url": "https://bikepolocalendar.com/",
+  "language": "en",
+  "description": "Your straightforward guide to hardcourt bike polo tournaments and events throughout the world.",
+  "feed": {
+    "subtitle": "Never miss another bike polo tournament.",
+    "filename": "feed.xml",
+    "path": "/feed/feed.xml",
+    "id": "https://bikepolocalendar.com/"
+  },
+  "jsonfeed": {
+    "path": "/feed/feed.json",
+    "url": "https://bikepolocalendar.com/feed/feed.json"
+  },
+  "author": {
+    "name": "Adam Hite",
+    "email": "events@bikepolocalendar.com",
+    "url": "https://bikepolocalendar.com/about/"
+  }
+}

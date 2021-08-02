@@ -1,0 +1,277 @@
+/* Colors */
+:root {
+  --gray: #666;
+  --gray-dark: #333;
+  --red: #dd4f41;
+  --white: #fff;
+  --font-sans: 'Jost', sans-serif;
+  --shadow-md: 0 4px 8px 0 rgba(0, 0, 0, .20);
+}
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  height: auto;
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+   scroll-behavior: auto;
+  }
+  
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+html,
+body {
+  background-color: #f5f2eb;
+  color: var(--gray-dark);
+  font-family: var(--font-sans);
+  margin: 0;
+  padding: 0;
+}
+
+.flow > * + * {
+  margin-top: 1rem;
+}
+
+.flow--lg > * + * {
+  margin-top: 2.5rem;
+}
+
+header {
+  margin: 0 auto;
+  padding-top: 40px;
+  text-align: center;
+}
+
+.flow--lg > header {
+  margin-top: 0;
+}
+
+.tagline {
+  display: block;
+  font-size: 1.125rem;
+  font-weight: 700;
+  letter-spacing: 3px;
+  margin: 0.625rem auto 2.5rem;
+  text-transform: uppercase;
+}
+
+.logo {
+  display: block;
+  margin: 0 auto;
+  max-width: 100px;
+}
+
+.nav--main {
+  background-color: var(--red);
+  box-shadow: var(--shadow-md);
+}
+
+.nav--main ul {
+  display: flex;
+  justify-content: space-around;
+  margin: 0;
+  padding: 0;
+}
+
+.nav--main a {
+  color: var(--white);
+  display: block;
+  font-size: 1.125rem;
+  padding: 18px 0;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.nav-item-active {
+  font-weight: 700;
+}
+
+.container {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 85%;
+  width: 1046px;
+}
+
+.controls {
+  text-align: center;
+}
+
+.btn {
+  background-color: var(--white);
+  border: 2px solid var(--red);
+  border-radius: 25px;
+  box-shadow: 0 6px 8px 0 rgba(0, 0, 0, .10);
+  color: var(--red);
+  display: inline-block;
+  font-weight: 700;
+  padding: 11px 32px;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.filter__summary {
+  background: rgba(255, 255, 255, 0.60);
+  border-radius: 10px;
+  box-shadow: 0 4px 10px 0 rgba(0, 0, 0, .10);
+  cursor: pointer;
+  font-size: 1.125rem;
+  font-weight: 700;
+  padding: 8px 20px;
+  position: relative;
+  text-align: left;
+}
+
+.filter__summary::-webkit-details-marker {
+  display: none;
+}
+
+.filter__summary * {
+  vertical-align: middle;
+}
+
+.filter__summary .icon--globe {
+  margin-right: 6px;
+}
+
+.filter__summary .icon--caret {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%)
+}
+
+.postlist {
+  padding: 0;
+}
+
+.card {
+  background-color: var(--white);
+  border-radius: 20px;
+  box-shadow: 0 4px 10px 0 rgba(0, 0, 0, .10);
+  color: var(--gray);
+  overflow: hidden;
+}
+
+.postlist-link {
+  line-height: 1.2;
+}
+
+.postlist-link a {
+  color: var(--red);
+  display: block;
+  font-weight: 500;
+  margin-bottom: 6px;
+  text-decoration: underline;
+  text-transform: uppercase;
+}
+
+.card__info {
+  padding: 6%;
+}
+
+.card__host {
+  color: var(--gray-dark);
+  font-size: 0.875rem;
+}
+
+.card__date {
+  text-transform: uppercase;
+}
+
+.card + .categories {
+  margin-top: 1.25rem;
+}
+
+.categories {
+  text-align: center;
+}
+
+.post-category {
+  background: rgba(0, 0, 0, .06);
+  border-radius: 12px;
+  display: inline-block;
+  font-size: 0.875rem;
+  padding: 2px 12px;
+  text-transform: uppercase;
+}
+
+.sidebar {
+  text-align: center;
+}
+
+.sponsor {
+  border-radius: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 300px;
+}
+
+.sponsor img {
+  display: block;
+}

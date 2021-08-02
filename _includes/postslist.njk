@@ -1,0 +1,32 @@
+<ul class="postlist flow--lg" role="list">
+{% for post in postslist %}
+  <li class="postlist-item{% if post.url == url %} postlist-item-active{% endif %} flow">
+    <div class="card">
+      {% image "." + post.url + "poster.jpg", post.data.title + " poster", "(min-width: 400px) 400px, 100vw" %}
+      <div class="card__info">
+        <p class="card__host"><strong>{{ post.data.host }}</strong> presents</p>
+        <h2 class="postlist-link">
+          {% if post.data.url %}
+            <a href="{{ post.data.url }}">{{ post.data.title }}</a>
+          {% else %}
+            {{ post.data.title }}
+          {% endif %}
+        </h2>
+        <p class="card__date">
+          {% if post.data.endDate %}
+            <time datetime="{{ post.data.startDate | htmlDateString }}">{{ post.data.startDate | readableDate }}</time> - <time datetime="{{ post.data.endDate | htmlDateString }}">{{ post.data.endDate | readableDate }}</time>
+          {% else %}
+            <time class="postlist-date" datetime="{{ post.data.startDate | htmlDateString }}">{{ post.data.startDate | readableDate }}</time>
+          {% endif %}
+        </p>
+        <p>{{ post.data.city }}, {{ post.data.stateProvince }} {{ post.data.country }}</p>
+      </div>
+    </div>
+    <p class="categories">
+      {% for category in post.data.categories %}
+        <span class="post-category">{{ category }}</span>
+      {% endfor %}
+    </p>
+  </li>
+{% endfor %}
+</ul>
