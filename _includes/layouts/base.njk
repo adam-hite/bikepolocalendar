@@ -22,7 +22,7 @@
       </a>
       <p class="tagline">Never miss another<br>bike polo tournament</p>
       <nav class="nav--main">
-        <ul role="list">
+        <ul role="list" aria-label="Primary">
           {%- for entry in collections.all | eleventyNavigation %}
             <li class="nav-item{% if entry.url == page.url %} nav-item-active{% endif %}"><a href="{{ entry.url | url }}">{{ entry.title }}</a></li>
           {%- endfor %}
@@ -39,7 +39,7 @@
             <span class="filter__summary__text">Filter By Region</span>
             <svg class="icon--caret" aria-hidden="true" focusable="false" viewBox="0 0 13 8" width="13" height="8" xmlns="http://www.w3.org/2000/svg"><path d="M6.853 7.728l5.264-5.264a.925.925 0 000-1.313l-.875-.874a.925.925 0 00-1.312 0L6.195 4.004 2.464.273a.925.925 0 00-1.313 0l-.878.875a.925.925 0 000 1.312l5.264 5.264a.926.926 0 001.316.004z" fill="#000" fill-rule="nonzero"/></svg>
           </summary>
-          <ul>
+          <ul role="list">
             {% for tag in collections.tagList %}
               {% set tagUrl %}/tags/{{ tag | slug }}/{% endset %}
               <li><a href="{{ tagUrl | url }}" class="post-tag">{{ tag }}</a></li>
@@ -89,25 +89,27 @@
     </main>
 
     <footer>
-      <a href="{{ '/' | url }}" aria-label="Bike Polo Calendar - home">
-        {% image "img/logo.svg", "", "100vw" %}
-      </a>
-      <ul role="list">
-        <li>Follow BPC</li>
-        <li><a href="//instagram.com/bikepolocalendar">@bikepolocalendar</a></li>
-        <li><a href="//instagram.com/explore/tags/bikepolocalendar/">#bikepolocalendar</a></li>
-      </ul>
-      <ul role="list">
-        <li><a href="/">Events</a></li>
-        <li><a href="/about">About</a></li>
-        <li><a href="/glossary">Glossary</a></li>
-        <li><a href="/support">Support</a></li>
-      </ul>
-      <p>
-        &copy; 2021 Bike Polo Calendar<br>
-        All rights reserved<br>
-        <a href="/privacy-policy">Privacy Policy</a>
-      </p>
+      <div class="container">
+        <a class="logo--footer" href="{{ '/' | url }}" aria-label="Bike Polo Calendar - home">
+          {% image "img/logo.svg", "", "100vw" %}
+        </a>
+        <ul role="list">
+          <li class="h3">Follow BPC</li>
+          <li><a href="//instagram.com/bikepolocalendar">@bikepolocalendar</a></li>
+          <li><a href="//instagram.com/explore/tags/bikepolocalendar/">#bikepolocalendar</a></li>
+        </ul>
+        <ul role="navigation" aria-label="Secondary">
+          <li><a href="/">Events</a></li>
+          <li><a href="/about">About</a></li>
+          <li><a href="/glossary">Glossary</a></li>
+          <li><a href="/support">Support</a></li>
+        </ul>
+        <p class="small">
+          &copy; 2021 Bike Polo Calendar<br>
+          All rights reserved<br>
+          <a href="/privacy-policy">Privacy Policy</a>
+        </p>
+      </div>
     </footer>
     <!-- Current page: {{ page.url | url }} -->
   </body>

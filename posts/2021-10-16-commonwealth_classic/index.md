@@ -1,6 +1,7 @@
 ---
 title: Commonwealth Classic
 host: Boston Bike Polo
+date: 2021-10-16
 startDate: 2021-10-16
 endDate: 2021-10-17
 city: Alston
